@@ -1,7 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+
+export function passwordMatchesValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const password = control.get("password")?.value;
+    const passwordConf = control.get("passwordConf")?.value;
+
+    if (password && passwordConf && password !== passwordConf) {
+      return {
+        passwordsDontMatch: true
+      }
+    }
+
+    return null;
+  };
+}
+
 
 @Component({
   selector: 'app-register',
@@ -11,10 +27,11 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class RegisterComponent implements OnInit {
 
   registerForm = new FormGroup({
+    username: new FormControl("", [Validators.required, Validators.minLength(3)]),
     email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl("", [Validators.required, Validators.minLength(6)]),
-    passwordConf: new FormControl("", [Validators.required])
-  })
+    passwordConf: new FormControl("", [])
+  },{ validators: passwordMatchesValidator() } )
   
 
   error: string = "";
@@ -28,17 +45,13 @@ export class RegisterComponent implements OnInit {
     if (!this.registerForm.valid) {
       return;
     }
-    let { email, password, passwordConf } = this.registerForm.value; 
+    let { username, email, password } = this.registerForm.value; 
 
     if(email === null || email === undefined) email = "";
     if(password === null || password === undefined) password = "";
+    if(username === null || username === undefined) username = "";
 
-    if (password !== passwordConf) {
-      this.error = "Passwords don't match"
-      return;
-    } 
-
-    this.auth.register(email, password)
+    this.auth.register(username, email, password)
     .subscribe({
       next : () => {
         this.router.navigate(['/dashboard']);

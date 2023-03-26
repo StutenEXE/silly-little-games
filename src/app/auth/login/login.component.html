@@ -3,7 +3,9 @@
         <h1 class="form-title">Login</h1>
 
         <div class="form-div">
-            <label class="form-label" [ngClass]="hasErrors('email') ? 'error-input' : ''">Email  </label>
+            <label class="form-label" [ngClass]="hasErrors('email') ? 'error-input' : ''">
+                Email <span class="required-star">*</span>
+            </label>
             <input class="form-input" formControlName="email" [ngClass]="hasErrors('email') ? 'error-input' : ''" />
             <div class="errors" *ngIf="hasErrors('email')">
                 <small *ngIf="hasError('email', 'required')">
@@ -16,7 +18,9 @@
         </div>
 
         <div class="form-div">
-            <label class="form-label">Password</label>
+            <label class="form-label">
+                Password <span class="required-star">*</span>
+            </label>
             <input class="form-input" formControlName="password" type="password" />
             <div class="errors" *ngIf="hasErrors('password')">
                 <small *ngIf="hasError('password', 'required')">
@@ -28,7 +32,6 @@
         <div class="errors" *ngIf="error !== ''">
             <small> {{ error }} </small>
         </div>
-
 
         <a routerLink="../register">Need an account ? Register here !</a>
         <a href="#">Forgot your password ?</a>

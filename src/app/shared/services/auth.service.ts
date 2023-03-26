@@ -6,12 +6,14 @@ import {
   createUserWithEmailAndPassword,
   UserCredential,
 } from '@angular/fire/auth';
+import { updateProfile } from 'firebase/auth';
 import { from, Observable, of, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+
   currentUser = authState(this.auth);
 
   constructor(private auth: Auth) {}
@@ -20,8 +22,10 @@ export class AuthService {
     return from(signInWithEmailAndPassword(this.auth, email, password));
   }
 
-  register(email: string, password: string): Observable<UserCredential> {
-    return from(createUserWithEmailAndPassword(this.auth, email, password));
+  register(username: string, email: string, password: string) {
+    return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe(
+      switchMap(({ user }) => updateProfile(user, { displayName: username }))
+    );
   }
 
   logout(): Observable<any> {

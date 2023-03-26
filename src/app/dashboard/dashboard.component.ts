@@ -8,12 +8,10 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
+  user = this.auth.currentUser;
+
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
-  }
-
-  logout() {
-    this.auth.logout();
   }
 }

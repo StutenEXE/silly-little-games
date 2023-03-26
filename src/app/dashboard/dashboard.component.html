@@ -1,2 +1,1 @@
-<p>dashboard works!</p>
-<input type="button" value="Logout" class="form-submit" (click)="logout()">
+<h1 *ngIf="user | async as user">Welcome {{ user.displayName }} !</h1>
