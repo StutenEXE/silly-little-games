@@ -2,11 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid var(--title-color);
+  width: fit-content;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form {
-  padding: 30px 25px 10px 25px;
-  width: 35%;
+  padding: 10px 25px;
   border-radius: 20px;
   z-index: 1;
   display: flex;
@@ -15,7 +19,6 @@
 }
 
 h1.form-title {
-  padding-bottom: 8px;
   text-align: center;
   color: var(--title-color);
   font-size: 1.2em;
@@ -60,27 +63,25 @@ h1.form-title {
   display: inline-block;
   outline: 0;
   cursor: pointer;
-  border: none;
-  padding: 0 56px;
+  border: 2px solid var(--tertiary-color);
   height: 45px;
-  line-height: 45px;
   border-radius: 7px;
-  background-color: var(--tertiary-color);
-  color: var(--title-color);
+  background-color: transparent;
+  color: var(--tertiary-color);
   font-weight: 400;
   font-size: 16px;
+  transition: 300ms ease-in-out;
+}
+
+.form-submit:hover {
+  background-color: var(--tertiary-color);
+  color: var(--title-color);
   box-shadow: 0 4px 14px 0 var(--tertiary-color);
-  transition: 200ms ease;
 }
 
 .label-input-hover {
   color: var(--title-color);
   transform: translate(-15%, -160%);
-}
-
-.links {
-  display: flex;
-  flex-direction: column;
 }
 
 .errors {
