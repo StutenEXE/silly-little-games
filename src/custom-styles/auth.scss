@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid var(--title-color);
+  border: 1px solid var(--title-color);
   width: fit-content;
   border-radius: 15px;
   margin-left: auto;
@@ -32,7 +32,7 @@ h1.form-title {
 
 .form-input {
   width: 100%;
-  border: 2px solid var(--tertiary-color);
+  border: 1px solid var(--tertiary-color);
   border-radius: 4px;
   margin: 8px 0;
   outline: none;
@@ -63,7 +63,7 @@ h1.form-title {
   display: inline-block;
   outline: 0;
   cursor: pointer;
-  border: 2px solid var(--tertiary-color);
+  border: 1px solid var(--tertiary-color);
   height: 45px;
   border-radius: 7px;
   background-color: transparent;
@@ -79,10 +79,6 @@ h1.form-title {
   box-shadow: 0 4px 14px 0 var(--tertiary-color);
 }
 
-.label-input-hover {
-  color: var(--title-color);
-  transform: translate(-15%, -160%);
-}
 
 .errors {
   color: var(--error);
