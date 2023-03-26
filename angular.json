@@ -100,6 +100,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "silly-little-games:build:production",
+            "firebaseProject": "silly-little-ga",
+            "firebaseHostingSite": "silly-little-games"
+          }
         }
       }
     }

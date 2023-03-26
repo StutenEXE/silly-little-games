@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "silly-little-ga"
+  },
+  "targets": {
+    "silly-little-ga": {
+      "hosting": {
+        "silly-little-games": [
+          "silly-little-games"
+        ]
+      }
+    }
   }
 }
