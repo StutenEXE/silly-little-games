@@ -1,5 +1,7 @@
-<div *ngIf="auth.currentUser | async as user">
-    <button (click)="logout()">Logout</button>
+<nav>
+    <div *ngIf="auth.currentUser | async as user">
+        <button (click)="logout()">Logout</button>
 
-</div>
-<p>navbar works!</p>
+    </div>
+    <p>navbar works!</p>
+</nav>
