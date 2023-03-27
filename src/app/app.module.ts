@@ -11,8 +11,10 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from './shared/services/auth.service';
-import { HotToastModule } from '@ngneat/hot-toast';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { HttpClientModule } from '@angular/common/http';
+import { DatabaseModule } from '@angular/fire/database';
+import { GamelistComponent } from './games/gamelist/gamelist.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,14 @@ import { HotToastModule } from '@ngneat/hot-toast';
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
+    DatabaseModule,
+    AngularFireDatabaseModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HotToastModule.forRoot()
+    HttpClientModule
   ],
-  providers: [
-    AuthService
-  ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

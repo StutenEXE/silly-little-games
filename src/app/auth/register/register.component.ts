@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { UserService } from 'src/app/shared/services/user.service';
 
 export function passwordMatchesValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -36,7 +37,7 @@ export class RegisterComponent implements OnInit {
 
   error: string = "";
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -54,6 +55,7 @@ export class RegisterComponent implements OnInit {
     this.auth.register(username, email, password)
     .subscribe({
       next : () => {
+        this.userService.createUser();
         this.router.navigate(['/dashboard']);
       },
       error: (err) => {
