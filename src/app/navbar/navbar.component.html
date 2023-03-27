@@ -1,5 +1,5 @@
 <nav>
-    <div *ngIf="auth.currentUser | async as user">
+    <div *ngIf="auth.currentUser !== null">
         <button (click)="logout()">Logout</button>
 
     </div>

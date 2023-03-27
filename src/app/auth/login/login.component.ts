@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { UserService } from 'src/app/shared/services/user.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   error: string = "";
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
