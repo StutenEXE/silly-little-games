@@ -13,7 +13,7 @@ import { from, Observable, of, switchMap } from 'rxjs';
 })
 export class AuthService {
 
-  currentUser!: User | null;
+  currentUser: User | null = null;
 
   constructor(private auth: Auth) { }
 
