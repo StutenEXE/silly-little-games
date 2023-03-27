@@ -41,7 +41,7 @@ export class AuthService {
 
   logout(): Observable<any> {
     this.currentUser = null;
-    localStorage.removeItem("uid")
+    localStorage.clear();
     return from(this.auth.signOut());
   }
 }

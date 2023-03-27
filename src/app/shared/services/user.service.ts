@@ -1,7 +1,5 @@
 import { Injectable } from "@angular/core";
-import { user } from "@angular/fire/auth";
-import { Database, DataSnapshot, get, ref, set } from '@angular/fire/database';
-import { Observable, of } from "rxjs";
+import { Database, DataSnapshot, get, ref, set, update } from '@angular/fire/database';
 import { User } from "../models/user";
 import { AuthService } from "./auth.service";
 
@@ -11,9 +9,8 @@ import { AuthService } from "./auth.service";
 export class UserService {
     private dbBasePath: string = '/users/';
     private dbPath: string = '';
-    
-    constructor(private db: Database, private auth: AuthService) {
-    }
+
+    constructor(private db: Database, private auth: AuthService) { }
 
     setPath() {
         let uid = localStorage.getItem("uid");
@@ -33,19 +30,13 @@ export class UserService {
     getUser(): Promise<DataSnapshot> {
         this.setPath();
         const dbRef = ref(this.db, this.dbPath);
-        console.log(this.dbPath);
         return get(dbRef);
     }
 
-    // update data
-    // update(ref(this.database, 'users/' + value.username), {
-    //   // username: value.username,
-    //   first_name: value.first_name,
-    //   last_name: value.last_name
-    // });
-    // alert('user updated!'); 
-
-    // updateCoins(value: number): Promise<void> {
-    //     return //TODO
-    // }
+    // Takes in the new number of coins
+    updateCoins(newAmount: number) {
+        update(ref(this.db, this.dbPath), {
+            coins: newAmount
+        });
+    }
 }

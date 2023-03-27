@@ -26,7 +26,8 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    ...canActivate(redirectToLogin)
+    loadChildren:() =>import('./dashboard/dashboard.module').then(x=>x.DashboardModule),
+    ...canActivate(redirectToLogin),
   },
 ];
 

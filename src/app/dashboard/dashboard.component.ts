@@ -10,7 +10,15 @@ import { UserService } from '../shared/services/user.service';
 })
 export class DashboardComponent implements OnInit {
 
-  user!: User;
+  _user!: User;
+
+  get user(): User {
+    return this._user;
+  }
+
+  set user(user: User) {
+    this._user = user; 
+  }
 
   constructor(private auth: AuthService, private userService: UserService) { 
   }
@@ -20,7 +28,6 @@ export class DashboardComponent implements OnInit {
     this.userService.getUser().then(
       data => {
         this.user = data.val();
-        console.log(this.user)
       }
     );
   }

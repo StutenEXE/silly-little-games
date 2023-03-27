@@ -1,5 +1,6 @@
+<!-- <h1 *ngIf="user | async as user">Welcome {{ user.name }} !</h1> -->
 <div *ngIf="user !== null && user !== undefined">
     <h1>Welcome {{ user.name }} !</h1>
     <h3>You have {{ user.coins }} coins</h3>
 </div>
-<!-- <h1 *ngIf="user | async as user">Welcome {{ user.name }} !</h1> -->
+<router-outlet></router-outlet>

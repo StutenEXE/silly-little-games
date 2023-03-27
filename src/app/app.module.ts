@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { HttpClientModule } from '@angular/common/http';
 import { DatabaseModule } from '@angular/fire/database';
+import { GamelistComponent } from './games/gamelist/gamelist.component';
 
 @NgModule({
   declarations: [
