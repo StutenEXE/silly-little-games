@@ -1,5 +1,13 @@
 <hr>
-<h3>Coinflip</h3>
-<small>Pay 2 coins to play</small>
+<p *ngIf="error !== ''"> {{ error }} </p>
+<h3>{{ coinFlipGame.gameName }}</h3>
+<small>{{ coinFlipGame.description }}</small>
+<div class="bets">
+    <button class="bet" [ngClass]="betVal === bet ? 'activated' : ''" *ngFor="let betVal of coinFlipGame.bets.values" (click)="setBetButton(betVal, $event)">{{ betVal }}</button>
+    <div class="customBet" *ngIf="coinFlipGame.bets.custom">
+        <input [value]="bet" type="number" (input)="setBetInput($event)" onlyNumber>
+    </div>
+</div>
+<p>[DEBUG] bet : {{ bet }}</p>
 <button (click)="playGame()">Play</button>
 <button routerLink="../">Return to gamelist</button>

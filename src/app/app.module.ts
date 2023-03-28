@@ -14,7 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { HttpClientModule } from '@angular/common/http';
 import { DatabaseModule } from '@angular/fire/database';
-import { GamelistComponent } from './games/gamelist/gamelist.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { GamelistComponent } from './games/gamelist/gamelist.component';
     DatabaseModule,
     AngularFireDatabaseModule,
     BrowserModule,
+    SharedModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule

@@ -1,7 +1,8 @@
 <nav>
-    <div *ngIf="auth.currentUser !== null">
-        <button (click)="logout()">Logout</button>
+    <h3 class="nav-title">Silly Little Games 😝</h3>
 
-    </div>
-    <p>navbar works!</p>
+    <button class="logout-btn" *ngIf="auth.currentUser !== null" (click)="logout()">
+        <img class="logout-icon" src="../../assets/icons/logout.svg" alt="logout">
+        <p class="logout-text">Logout</p>
+    </button>
 </nav>

@@ -1,0 +1,11 @@
+[
+    {
+        "gameName": "Coinflip",
+        "bets": {
+            "values": [2, 5, 10],
+            "custom": true
+        },
+        "route": "./coinflip",
+        "description": "Flip a coin !"
+    }
+]
