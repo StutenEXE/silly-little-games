@@ -21,14 +21,14 @@ nav {
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
-    border-radius: 9px;
-    padding: 0 10px;
+    border-radius: 1.1vw;
+    padding: 0 1.3vw;
     font-weight: 600;
     cursor: pointer;
 }
 
 .logout-text {
-    transition: 400ms;
+    transition: transform 400ms;
 }
 
 .logout-icon {
@@ -41,6 +41,6 @@ nav {
         transform: scale(1.1);
     }
     .logout-icon {
-        transform: rotateY(-180deg) translateX(.5em);
+        transform: rotateY(-180deg) translateX(1vw);
     }
 }
