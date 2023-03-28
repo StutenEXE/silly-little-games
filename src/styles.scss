@@ -36,6 +36,10 @@ h3 {
     font-size: 3.3vh;
 }
 
+h4 {
+    font-size: 2.15;
+}
+
 p, label, a {
     font-size: 2.8vh;
 }
@@ -46,6 +50,33 @@ span {
 
 small {
     font-size: 2.1vh;
+}
+
+hr {
+    margin: 1.4vh 0;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+.coins {
+    color: var(--coins);
+}
+
+.error {
+    color: var(--error);
+}
+
+a {
+    color: inherit;
+    /* blue colors for links too */
+    text-decoration: inherit;
+    /* no underline */
+}
+
+a:visited {
+    color: inherit;
 }
 
 /* Scrollbar */
@@ -64,23 +95,4 @@ small {
     border-radius: 40px;
     background-clip: padding-box;
     transition: 300ms;
-}
-
-a {
-    color: inherit;
-    /* blue colors for links too */
-    text-decoration: inherit;
-    /* no underline */
-}
-
-a:visited {
-    color: inherit;
-}
-
-h1, h2, h3, p {
-    margin: 0;
-}
-
-.coins {
-    color: var(--coins);
 }
