@@ -1,10 +1,21 @@
-<p *ngIf="error !== ''"> {{ error }} </p>
-<div *ngIf="game !== undefined && game !== null; else loader">
-    <h3>{{ game.gameName | titlecase}}</h3>
-    <small>{{ game.description }}</small>
-    <router-outlet></router-outlet>
+<div class="game-container">
+    <p class="error" *ngIf="error !== ''"> {{ error }} </p>
+
+    <div class="game-card" *ngIf="game !== undefined && game !== null; else loader">
+        <div class="game-title">
+            <h2>{{ game.gameName | titlecase}}</h2>
+            <h4>{{ game.description }}</h4>
+        </div>
+
+        <router-outlet></router-outlet>
+
+    </div>
+
+    <ng-template #loader>
+        <app-loader></app-loader>
+    </ng-template>
+
+    <button class="return-btn" routerLink="../..">
+        <p>Return to gamelist</p>
+    </button>
 </div>
-<ng-template #loader> 
-    <app-loader></app-loader>
-</ng-template>
-<button routerLink="../..">Return to gamelist</button>
