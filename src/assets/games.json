@@ -6,6 +6,7 @@
             "custom": true
         },
         "route": "./coinflip",
-        "description": "Flip a coin !"
+        "description": "Flip a coin to gain even more coins !",
+        "image": "https://cdn-icons-png.flaticon.com/512/5524/5524558.png"
     }
 ]

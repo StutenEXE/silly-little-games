@@ -6,4 +6,5 @@ export class Game {
     };
     route!: string;
     description!: string;
+    image!: string;
 }

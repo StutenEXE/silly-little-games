@@ -1,0 +1,11 @@
+<div [routerLink]="game.route" class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <h3 class="card-title">{{ game.gameName }}</h3>
+            <img class="card-img" [src]="game.image">
+        </div>
+        <div class="flip-card-back">
+            <h3 class="card-title">{{ game.description }}</h3>
+        </div>
+    </div>
+</div>
