@@ -6,5 +6,41 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 25px;
+    padding: 0 3.1vw;
+}
+
+.nav-title {
+    color: var(--title-color);
+}
+
+.logout-btn {
+    border: 2px solid var(--background-color);
+    height: 80%;
+    background: var(--error);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 9px;
+    padding: 0 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.logout-text {
+    transition: 400ms;
+}
+
+.logout-icon {
+    height: 90%;
+    transition: transform 400ms;
+}
+
+.logout-btn:hover {
+    .logout-text {
+        transform: scale(1.1);
+    }
+    .logout-icon {
+        transform: rotateY(-180deg) translateX(.5em);
+    }
 }

@@ -9,9 +9,11 @@
     --secondary-color: #7f5af0;
     --tertiary-color: #2cb67d;
     --error: #ff0000;
+    --coins: #f3c70d;
 }
 
-html, body {
+html,
+body {
     background-color: var(--background-color);
     color: var(--text-color);
     position: relative;
@@ -19,6 +21,22 @@ html, body {
     width: 100vw;
     height: 100vh;
     font-family: 'league-spartan', sans-serif;
+}
+
+h1 {
+    font-size: 5.6vh;
+}
+
+h3 {
+    font-size: 3.3vh;
+}
+
+p, label, a {
+    font-size: 2.8vh;
+}
+
+small {
+    font-size: 2.1vh;
 }
 
 /* Scrollbar */
@@ -50,6 +68,10 @@ a:visited {
     color: inherit;
 }
 
-p {
+h1, h2, h3, p {
     margin: 0;
+}
+
+.coins {
+    color: var(--coins);
 }

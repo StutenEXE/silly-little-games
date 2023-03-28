@@ -1,6 +1,8 @@
 <!-- <h1 *ngIf="user | async as user">Welcome {{ user.name }} !</h1> -->
-<div *ngIf="user !== null && user !== undefined">
-    <h1>Welcome {{ user.name }} !</h1>
-    <h3>You have {{ user.coins }} coins</h3>
+<div class="dashboard-container">
+    <div class="dashboard-header" *ngIf="user !== null && user !== undefined">
+        <h1>Welcome {{ user.name }} !</h1>
+        <h3>You have <span class="coins">{{ user.coins }} coins</span></h3>
+    </div>
+    <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
