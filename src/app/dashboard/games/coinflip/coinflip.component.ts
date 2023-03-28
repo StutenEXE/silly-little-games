@@ -3,7 +3,6 @@ import { DashboardComponent } from 'src/app/dashboard/dashboard.component';
 import { Game } from 'src/app/shared/models/game';
 import { GameService } from 'src/app/shared/services/games.service';
 import { UserService } from 'src/app/shared/services/user.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-coinflip',
@@ -12,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CoinflipComponent implements OnInit {
 
-  readonly GAME_NAME = "Coinflip";
+  readonly GAME_NAME = "coinflip";
 
   coinFlipGame!: Game;
   error: string = '';
@@ -32,7 +31,7 @@ export class CoinflipComponent implements OnInit {
           this.coinFlipGame = game;
         }
       }
-    })
+    });
   }
 
   playGame() {

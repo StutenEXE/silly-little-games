@@ -1,0 +1,10 @@
+<p *ngIf="error !== ''"> {{ error }} </p>
+<div *ngIf="game !== undefined && game !== null; else loader">
+    <h3>{{ game.gameName | titlecase}}</h3>
+    <small>{{ game.description }}</small>
+    <router-outlet></router-outlet>
+</div>
+<ng-template #loader> 
+    <app-loader></app-loader>
+</ng-template>
+<button routerLink="../..">Return to gamelist</button>

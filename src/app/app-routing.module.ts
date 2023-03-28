@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren:() =>import('./dashboard/dashboard.module').then(x=>x.DashboardModule),
     ...canActivate(redirectToLogin),
   },
+  {
+    path: '**',
+    redirectTo: 'login'
+  }
 ];
 
 @NgModule({

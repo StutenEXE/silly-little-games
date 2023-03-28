@@ -15,7 +15,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { HttpClientModule } from '@angular/common/http';
 import { DatabaseModule } from '@angular/fire/database';
 import { SharedModule } from './shared/shared.module';
-import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { LoaderComponent } from './loader/loader.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent,
-    LoaderComponent
+    DashboardComponent
   ],
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebase)),

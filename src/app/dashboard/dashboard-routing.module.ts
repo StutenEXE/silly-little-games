@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CoinflipComponent } from '../games/coinflip/coinflip.component';
-import { GamelistComponent } from '../games/gamelist/gamelist.component';
+import { GamelistComponent } from './gamelist/gamelist.component';
+import { GameComponent } from './games/game.component';
 
 
 const routes: Routes = [
@@ -11,9 +11,14 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     {
-        path: 'coinflip',
-        component: CoinflipComponent
+        path: 'game',
+        loadChildren:() =>import('./games/game.module').then(x=>x.GameModule),
+        component: GameComponent
     },
+    {
+        path: '**',
+        component: GamelistComponent,
+    }
 ]
 
 @NgModule({
