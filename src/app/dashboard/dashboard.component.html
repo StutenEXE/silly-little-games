@@ -1,8 +1,12 @@
 <!-- <h1 *ngIf="user | async as user">Welcome {{ user.name }} !</h1> -->
 <div class="dashboard-container">
-    <div class="dashboard-header" *ngIf="user !== null && user !== undefined">
+    <div class="dashboard-header" *ngIf="user !== null && user !== undefined; else loader">
         <h1>Welcome {{ user.name }} !</h1>
         <h3>You have <span class="coins">{{ user.coins }} coins</span></h3>
     </div>
+    <ng-template #loader> 
+        <app-loader class="dashboard-loader"></app-loader>
+    </ng-template>
+    <hr>
     <router-outlet></router-outlet>
 </div>

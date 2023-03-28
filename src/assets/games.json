@@ -1,11 +1,12 @@
 [
     {
-        "gameName": "Coinflip",
+        "gameName": "coinflip",
         "bets": {
             "values": [2, 5, 10],
             "custom": true
         },
-        "route": "./coinflip",
-        "description": "Flip a coin !"
+        "route": "./game/coinflip",
+        "description": "Flip a coin to gain even more coins !",
+        "image": "https://cdn-icons-png.flaticon.com/512/5524/5524558.png"
     }
 ]
