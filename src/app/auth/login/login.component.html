@@ -2,30 +2,40 @@
     <form class="form" [formGroup]="loginForm">
         <h3 class="form-title">Login</h3>
 
-        <div class="form-div">
-            <label class="form-label" [ngClass]="hasErrors('email') ? 'error-input' : ''">
-                Email <span class="required-star">*</span>
-            </label>
-            <input class="form-input" formControlName="email" [ngClass]="hasErrors('email') ? 'error-input' : ''" />
-            <div class="errors" *ngIf="hasErrors('email')">
-                <small *ngIf="hasError('email', 'required')">
-                    This field is required
-                </small>
-                <small *ngIf="hasError('email', 'email')">
-                    This field requires an email
-                </small>
-            </div>
-        </div>
+        <div class="form-controls" autocomplete="off">
 
-        <div class="form-div">
-            <label class="form-label">
-                Password <span class="required-star">*</span>
-            </label>
-            <input class="form-input" formControlName="password" type="password" />
-            <div class="errors" *ngIf="hasErrors('password')">
-                <small *ngIf="hasError('password', 'required')">
-                    This field is required
-                </small>
+            <div class="form-control">
+                <input type="text" formControlName="email" [ngClass]="hasErrors('email') ? 'error-input' : ''">
+                <label>
+                    <span *ngFor="let letter of 'Email'.split(''); index as i"
+                        [style]="'transition-delay:'+ 50 * i + 'ms'"
+                        [ngClass]="hasErrors('email') ? 'error-input' : ''">{{ letter }}</span>
+                    <span class="required-star" [style]="'transition-delay:'+ 50 * 'Email'.length + 'ms'">*</span>
+                </label>
+                <div class="errors" *ngIf="hasErrors('email')">
+                    <small *ngIf="hasError('email', 'required')">
+                        This field is required
+                    </small>
+                    <small *ngIf="hasError('email', 'email')">
+                        This field requires an email
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <input type="password" formControlName="password"
+                    [ngClass]="hasErrors('password') ? 'error-input' : ''">
+                <label>
+                    <span *ngFor="let letter of 'Password'.split(''); index as i"
+                        [style]="'transition-delay:'+ 50 * i + 'ms'"
+                        [ngClass]="hasErrors('password') ? 'error-input' : ''">{{ letter }}</span>
+                    <span class="required-star" [style]="'transition-delay:'+ 50 * 'Email'.length + 'ms'">*</span>
+                </label>
+                <div class="errors" *ngIf="hasErrors('password')">
+                    <small *ngIf="hasError('password', 'required')">
+                        This field is required
+                    </small>
+                </div>
             </div>
         </div>
 

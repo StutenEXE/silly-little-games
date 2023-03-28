@@ -14,7 +14,7 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.8vh;
+  gap: 1.9vh;
 }
 
 .form-title {
@@ -22,36 +22,6 @@
   color: var(--title-color);
   margin-left: auto;
   margin-right: auto;
-}
-
-.form-div {
-  position: relative;
-}
-
-.form-input {
-  width: 100%;
-  border: 1px solid var(--tertiary-color);
-  border-radius: 4px;
-  margin: 8px 0;
-  outline: none;
-  padding: 1.4vh;
-  box-sizing: border-box;
-  z-index: 3;
-  color: var(--text-color);
-  background: transparent;
-  position: relative;
-  margin-bottom: 0;
-}
-
-.form-label {
-  color: var(--text-color);
-  opacity: 70%;
-  z-index: 2;
-}
-
-.form-input:focus {
-  border-color: var(--tertiary-color);
-  box-shadow: 0 0 8px 0 var(--tertiary-color);
 }
 
 .form-submit {
@@ -78,7 +48,7 @@
 
 
 .errors {
-  color: var(--error);
+  color: var(--error) !important;
   margin: 5px 0;
   font-size: 0.9em;
   display: flex;
@@ -87,10 +57,61 @@
 }
 
 .error-input {
-  border-color: var(--error);
-  color: var(--error);
+  border-color: var(--error) !important;
+  color: var(--error) !important;
 }
 
 .required-star {
-  color: var(--error);
+  color: var(--error) !important;
+}
+
+.form-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5vh;
+}
+
+.form-control {
+  position: relative;
+}
+
+.form-control input {
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+  z-index: 3;
+  color: var(--text-color);
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid var(--title-color);
+  display: block;
+  padding: 2.6vh 0;
+  color: var(--title-color);
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-bottom-color: var(--tertiary-color);
+}
+
+.form-control label {
+  position: absolute;
+  top: 2.6vh;
+  left: 0;
+  pointer-events: none;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 3.2vh;
+  color: var(--title-color);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span {
+  color: var(--tertiary-color);
+  transform: translateY(-5.3vh);
+}
+.form-control input.ng-dirty+label span {
+  transform: translateY(-5.3vh);
 }
