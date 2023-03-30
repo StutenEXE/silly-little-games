@@ -8,9 +8,9 @@
                 <input type="text" formControlName="email" [ngClass]="hasErrors('email') ? 'error-input' : ''">
                 <label>
                     <span *ngFor="let letter of 'Email'.split(''); index as i"
-                        [style]="'transition-delay:'+ 50 * i + 'ms'"
+                        [style]="'transition-delay:'+ DELAY * i + 'ms'"
                         [ngClass]="hasErrors('email') ? 'error-input' : ''">{{ letter }}</span>
-                    <span class="required-star" [style]="'transition-delay:'+ 50 * 'Email'.length + 'ms'">*</span>
+                    <span class="required-star" [style]="'transition-delay:'+  DELAY * 'Email'.length + 'ms'">*</span>
                 </label>
                 <div class="errors" *ngIf="hasErrors('email')">
                     <small *ngIf="hasError('email', 'required')">
@@ -27,9 +27,9 @@
                     [ngClass]="hasErrors('password') ? 'error-input' : ''">
                 <label>
                     <span *ngFor="let letter of 'Password'.split(''); index as i"
-                        [style]="'transition-delay:'+ 50 * i + 'ms'"
+                        [style]="'transition-delay:'+  DELAY * i + 'ms'"
                         [ngClass]="hasErrors('password') ? 'error-input' : ''">{{ letter }}</span>
-                    <span class="required-star" [style]="'transition-delay:'+ 50 * 'Email'.length + 'ms'">*</span>
+                    <span class="required-star" [style]="'transition-delay:'+  DELAY * 'Email'.length + 'ms'">*</span>
                 </label>
                 <div class="errors" *ngIf="hasErrors('password')">
                     <small *ngIf="hasError('password', 'required')">

@@ -12,6 +12,8 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class LoginComponent implements OnInit {
 
+  readonly DELAY = 50;
+
   loginForm = new FormGroup({
     email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl("", [Validators.required])

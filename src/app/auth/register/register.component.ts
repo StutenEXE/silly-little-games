@@ -27,6 +27,8 @@ export function passwordMatchesValidator(): ValidatorFn {
 })
 export class RegisterComponent implements OnInit {
 
+  readonly DELAY = 50;
+
   registerForm = new FormGroup({
     username: new FormControl("", [Validators.required, Validators.minLength(3)]),
     email: new FormControl("", [Validators.required, Validators.email]),
